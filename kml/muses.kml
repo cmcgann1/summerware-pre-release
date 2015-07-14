@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Parade Route - Krewe of Muses</name>
+		<description><![CDATA[Krewe of Muses<br>Uptown, New Orleans<br><br>Organized in 2000, the Krewe of Muses is named for the daughters of Zeus and patrons of the arts and sciences. Formed by more than 650 riders, this all-female organization is the only one that parades at night. The parade has become one of Mardi Gras' favorites, thanks to its humorous and biting parade themes. <br><br>www.MardiGrasNewOrleans.com]]></description>
+		<Folder>
+			<name>Untitled layer</name>
+			<Placemark>
+				<name>Begins Here</name>
+				<styleUrl>#icon-503-009D57-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-90.114986,29.920823,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Krewe of Muses Parade Route</name>
+				<styleUrl>#line-6600CC-5-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-90.114992,29.920837,0.0 -90.11495,29.9208,0.0 -90.112465,29.920470000000005,0.0 -90.10976,29.92035,0.0 -90.108029,29.920288000000003,0.0 -90.10633,29.920420000000004,0.0 -90.10137,29.92078,0.0 -90.10192,29.92637,0.0 -90.0954,29.92693,0.0 -90.09421,29.92719,0.0 -90.09204,29.92794,0.0 -90.09103,29.92835,0.0 -90.09017,29.92864,0.0 -90.08825,29.92958,0.0 -90.08598,29.930890000000005,0.0 -90.08352,29.93222,0.0 -90.08155,29.93342,0.0 -90.07886,29.935150000000004,0.0 -90.07752,29.93625,0.0 -90.07257,29.94285,0.0 -90.07219,29.942939999999997,0.0 -90.072044,29.943059000000005,0.0 -90.07198,29.943210000000004,0.0 -90.071953,29.943379000000004,0.0 -90.07202,29.94354,0.0 -90.07213,29.943691000000005,0.0 -90.07232,29.94378,0.0 -90.0702,29.95102,0.0 -90.06979,29.95222,0.0 -90.06916,29.953079999999996,0.0 -90.06615000000001,29.95102,0.0 -90.066594,29.950003,0.0 -90.0669,29.94894,0.0 -90.067248,29.947683999999995,0.0 -90.0674,29.946409999999997,0.0 -90.06757,29.943430000000003,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Ends Here</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-90.06757,29.943389,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-503-009D57-nodesc-normal'>
+			<IconStyle>
+				<color>ff579D00</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='icon-503-009D57-nodesc-highlight'>
+			<IconStyle>
+				<color>ff579D00</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='icon-503-009D57-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-503-009D57-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-503-009D57-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='icon-503-DB4436-nodesc-normal'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='icon-503-DB4436-nodesc-highlight'>
+			<IconStyle>
+				<color>ff3644DB</color>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='icon-503-DB4436-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-503-DB4436-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-503-DB4436-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id='line-6600CC-5-nodesc-normal'>
+			<LineStyle>
+				<color>ffCC0066</color>
+				<width>5</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<Style id='line-6600CC-5-nodesc-highlight'>
+			<LineStyle>
+				<color>ffCC0066</color>
+				<width>8.0</width>
+			</LineStyle>
+			<BalloonStyle>
+				<text><![CDATA[<h3>$[name]</h3>]]></text>
+			</BalloonStyle>
+		</Style>
+		<StyleMap id='line-6600CC-5-nodesc'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#line-6600CC-5-nodesc-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#line-6600CC-5-nodesc-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+	</Document>
+</kml>
