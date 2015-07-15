@@ -23,16 +23,17 @@ function titleForMarker(dataElement) {
 // HTML string that will show on marker click
 function contentForMarker(dataElement) {
     return '<div id="content">'+ 
-    'Type of offense '+
+    '<b>Type of offense: </b>'+
+    
     dataElement.typetext+
     "<br>"+
-    'Time dispatched: '+
+    '<b>Time dispatched:</b> '+
     dataElement.timedispatch+
     "<br>"+
-  'Time closed: '+
+  '<b>Time closed:</b> '+
     dataElement.timeclosed+
     "<br>"+
-  'Zip Code: '+
+  '<b>Zip Code:</b> '+
   dataElement.zip+
        "<br>"+
        
