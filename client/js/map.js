@@ -20,6 +20,10 @@ function titleForMarker(dataElement) {
     return "Type: "+dataElement.typetext;
 }
 
+function imageForMarker(dataElement) {
+    return 'https://google-developers.appspot.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+}
+
 // HTML string that will show on marker click
 function contentForMarker(dataElement) {
     return '<div id="content">'+ 
@@ -73,6 +77,7 @@ function showDataOnMap(data) {
             var marker = new google.maps.Marker({
                 position: location,
                 map: googleMap,
+                icon: imageForMarker(info),
                 title: titleForMarker(info)
             });
             google.maps.event.addListener(marker, 'click', function() {
