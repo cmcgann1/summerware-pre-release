@@ -61,6 +61,9 @@ function imageForMarker(dataElement) {
      else if (dataElement.typetext === 'RECKLESS DRIVING'){
         return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/DUI%20icon.png';
     }
+    else {
+        return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAMAAADXT/YiAAAATlBMVEX/Zmb///+lpaVCQkK9TEzATU0/Pz+ioqJdJSVRICCrRERaJCSurq4zMzNUVFTMUlIeHh5OTk5paWlgYGAkJCTbWFjhWlpaWlpmKSmZmZm14r/wAAAAQ0lEQVQImWNgZGTi4+XjYWRkYBTn5uLn4hRiZJCUYAABDnYGNlYwi4WZQUAMzBIVQRJj5wCzOHkYGIVheoHmCYLNAwBfwQIRDa1rgAAAAABJRU5ErkJggg==';
+    }
 }
 
 // HTML string that will show on marker click
