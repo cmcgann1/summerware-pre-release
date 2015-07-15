@@ -41,8 +41,8 @@
                 <p><button class="btn btn-small" id="add-parameter" ng-click="addParam()">Add another parameter</button></p>
                 <p><button class="btn btn-medium btn-primary" id="send" ng-click="send()">Send Request...</button></p>
               </div>
-              Choose Event: <select name="choose_event" id = "event_names"></select>
-              Choose Date: <select name"event_date" id="event_dates">
+              Choose Event: <select name="choose_event" id = "event_names" onchange = "getEvent()"></select>
+              Choose Date: <select name"event_date" id="event_dates" onchange="getEvent()">
                 <option>2015</option>
                 <option>2014</option>
                 <option>2013</option>
@@ -62,9 +62,6 @@
     <script src="bower_components/ng-json-explorer/dist/angular-json-explorer.min.js"></script>
     <script>
       var app = angular.module( "pre-release", ['ngJsonExplorer']);
-      
-      //The json response object
-      var events;
       
       app.controller(
         "EmergencyController",
@@ -140,24 +137,30 @@
       </script>
       
       <script>
+      //The json response object
+      var events;
+      
        $(document).ready(function(){
           $.getJSON('/js/event_dates.json', function(response){
-            console.log(response);
+            events = response;
             var event_name_field = document.getElementById("event_names");
-            var eventNames = Object.keys(response);
+            var eventNames = Object.keys(events);
       
             for(var i = 0; i < eventNames.length; i++){
               var option = document.createElement("option");
               option.text = eventNames[i];
               event_name_field.add(option);
             }
-
-            showEvent(response["Mardi Gras Day"]['2015']);
-            })
-          });//readJsonFile);
-       
-
-       function showEvent(event) {
+          });
+      });
+            
+        function getEvent(){
+        	console.log("getEvent");
+          var chosenObject = events[$("#event_names").val()][$("#event_dates").val()];
+          showEvent(chosenObject);
+        }
+            
+        function showEvent(event) {
        		console.log("event=",event);
        		var where = "timearrival > '"+event.start+"'";
        		console.log("where=",where);
@@ -169,6 +172,9 @@
 			if(event.kmlurl) {
 				showKMLFile(event.kmlurl);
 			}
+	    }
+       function getObjectFromJson(jsonObject, id_name1, id_name2){
+         
        }
       </script>
 
