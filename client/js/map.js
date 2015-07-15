@@ -8,7 +8,8 @@ function initialize() {
 			lat: 29.9657894,
 			lng: -90.0993333
 		},
-		zoom: 11
+		zoom: 11,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
 	};
 	googleMap = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
@@ -21,9 +22,34 @@ function titleForMarker(dataElement) {
 }
 
 function imageForMarker(dataElement) {
-	return 'https://google-developers.appspot.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+    if(dataElement.typetext === 'DISCHARGING FIREARMS'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/weapons%20icon.png';
+    } 
+    else if(dataElement.typetext === 'COMPLAINT OTHER'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/disturbing-the-peace%20icon.png';
+    }
+    else if (dataElement.typetext === 'BURGLAR ALARM'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/burglary%20icon.png';
+    }
+    else if (dataElement.typetext === 'DISTURBANCE (OTHER)'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/disturbing-the-peace%20icon.png';
+    }
+    else if (dataElement.typetext === 'AUTO ACCIDENT'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/vehicle-break-in-theft%20icon.png';
+    }
+    else if (dataElement.typetext === 'TRAFFIC INCIDENT'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/vehicle-break-in-theft%20icon.png';
+    }
+    else if (dataElement.typetext === 'FIREWORKS'){
+        return 'https://cdn0.iconfinder.com/data/icons/fatcow/32/dynamite.png';
+    }
+    else if (dataElement.typetext === 'FUGITIVE ATTTACHMENT'){
+        return 'https://cdn3.iconfinder.com/data/icons/pidginsmilies/handcuffs.png';
+    }
+    else if (dataElement.typetext === 'MUNICIPAL ATTTACHMEN'){
+        return 'http://cdns2.freepik.com/free-photo/handcuffs-silhouette-detailed-icon-vector_91-8549.jpg';
+    }
 }
-
 // HTML string that will show on marker click
 function contentForMarker(dataElement) {
 	return '<div id="content">'+
@@ -98,16 +124,22 @@ var kmlLayer;
  * Display KML file 
  */
 function showKMLFile(url) {
-	var urlPrefix = 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/kml/';
-	if(!url.startsWith('http')) {
-		url = urlPrefix + url;
-	}
 	if(kmlLayer) {
 		kmlLayer.setMap(null);
 	}
-	kmlLayer = new google.maps.KmlLayer({
-		url: url,
-		map: googleMap,
-		preserveViewport: true
-	});
+
+	if(url) {
+		var urlPrefix = 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/kml/';
+		if(!url.startsWith('http')) {
+			url = urlPrefix + url;
+		}
+		kmlLayer = new google.maps.KmlLayer({
+			url: url,
+			map: googleMap,
+			preserveViewport: true
+		});
+	}
+	else {
+		kmlLayer = null;
+	}
 }

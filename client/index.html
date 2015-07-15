@@ -30,8 +30,10 @@
                 <p><button class="btn btn-medium btn-primary" id="send" ng-click="send()">Send Request...</button></p>
               </div>
             -->
-              Choose Event: <select name="choose_event" id = "event_names" onchange = "getEvent"></select>
-              Choose Date: <select name"event_date" id="event_dates" onchange="getEvent">
+
+              Choose Event: <select name="choose_event" id = "event_names" onchange = "getEvent()"></select>
+              Choose Date: <select name"event_date" id="event_dates" onchange="getEvent()">
+
                 <option>2015</option>
                 <option>2014</option>
                 <option>2013</option>
@@ -140,17 +142,29 @@
               option.text = eventNames[i];
               event_name_field.add(option);
             }
+
+            getEvent();
           });
-          });//readJsonFile);
-       
-         function getEvent(){
-              var chosenObject = events[$("#event_names").val()][$("#event_dates").val()];
-              showEvent(chosenObject);
-            }
+      });
             
-            function showEvent(event){
-              
-            }
+        function getEvent(){
+        	console.log("getEvent");
+          var chosenObject = events[$("#event_names").val()][$("#event_dates").val()];
+          showEvent(chosenObject);
+        }
+            
+        function showEvent(event) {
+       		console.log("event=",event);
+       		var where = "timearrival > '"+event.start+"'";
+       		console.log("where=",where);
+       		var params = {"$limit":"10","$where":where};
+       		$.get( "/emergency", params, function(data) {
+       			console.log("emergency data = ",data);
+       			showDataOnMap(data);
+			});
+			showKMLFile(event.kmlurl);
+	    }
+
        function getObjectFromJson(jsonObject, id_name1, id_name2){
          
        }
