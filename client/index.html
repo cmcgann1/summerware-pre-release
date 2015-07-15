@@ -13,10 +13,10 @@
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
           <div class="pull-left">
-            <a href="https://operationspark.org/summerware" class="brand">Summerware();</a>
+            <a href="https://operationspark.org/summerware" class="brand">NOPD</a>
           </div>
           <div class="pull-right">
-            <a href="https://operationspark.org" class="brand">Operation Spark</a>
+            <a href="https://operationspark.org" class="brand">Cool Kids</a>
           </div>
         </div>
       </div>
@@ -25,24 +25,20 @@
       </div>
       <div class="row">
         <div class="row-fluid" id="data">
-            <div class="span2">
-              <h4>Parameters</h4>
-              <p ng-show="fields.length"><a href="#" tabindex="-1" ng-click="removeAll()">remove all</a></p>
-            </div>
             <div class="span10">
-              <div id="parameters">
-                <fieldset id="parameters-fieldset" data-ng-repeat="field in fields">
-                  <p>
-                    <input class="inline input-large" placeholder="name" ng-model="field.key" type="text">
-                    <input class="inline input-xxlarge" placeholder="value" ng-model="field.value" type="text">
-                    <a class="icon-remove remove" href="#" data-index="0" tabindex="-1" ng-show="$last" ng-click="removeParam()"></a>
-                  </p>
-                </fieldset>
-                <p><button class="btn btn-small" id="add-parameter" ng-click="addParam()">Add another parameter</button></p>
+            <!--  <div id="parameters">
                 <p><button class="btn btn-medium btn-primary" id="send" ng-click="send()">Send Request...</button></p>
               </div>
-              Choose Event: <select name="choose_event">
-                <option></option>
+            -->
+
+              Choose Event: <select name="choose_event" id = "event_names" onchange = "getEvent()"></select>
+              Choose Date: <select name"event_date" id="event_dates" onchange="getEvent()">
+
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
               </select>
               <div id="map-canvas"></div>
               <json-explorer data="records"></json-explorer>
@@ -115,7 +111,7 @@
             });
             return(request.then(handleSuccess, handleError));
         }
-            
+        
         function handleError(response) {
             if (!angular.isObject(response.data) ||
                 !response.data.message) {
@@ -129,7 +125,50 @@
             return(response.data);
         }
       });
-    </script>
+      </script>
+      
+      <script>
+      //The json response object
+      var events;
+      
+       $(document).ready(function(){
+          $.getJSON('/js/event_dates.json', function(response){
+            events = response;
+            var event_name_field = document.getElementById("event_names");
+            var eventNames = Object.keys(events);
+      
+            for(var i = 0; i < eventNames.length; i++){
+              var option = document.createElement("option");
+              option.text = eventNames[i];
+              event_name_field.add(option);
+            }
+
+            getEvent();
+          });
+      });
+            
+        function getEvent(){
+        	console.log("getEvent");
+          var chosenObject = events[$("#event_names").val()][$("#event_dates").val()];
+          showEvent(chosenObject);
+        }
+            
+        function showEvent(event) {
+       		console.log("event=",event);
+       		var where = "timearrival > '"+event.start+"'";
+       		console.log("where=",where);
+       		var params = {"$limit":"10","$where":where};
+       		$.get( "/emergency", params, function(data) {
+       			console.log("emergency data = ",data);
+       			showDataOnMap(data);
+			});
+			showKMLFile(event.kmlurl);
+	    }
+
+       function getObjectFromJson(jsonObject, id_name1, id_name2){
+         
+       }
+      </script>
 
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js">
