@@ -1,0 +1,54 @@
+Endymion
+Min x, Min y
+29.941964, -90.102492
+Max x, Max y
+29.983800, -90.074044
+
+Muses
+Min x, Min y
+29.917127, -90.116152
+Max x, Max y
+29.966958, -90.062593
+
+Rex
+Min x, Min y
+29.916567, -90.116187
+Max x, Max y
+29.962681, -90.057651
+
+Hermes
+Min x, Min y
+29.956934, -90.066978
+Max x, Max y
+29.962681, -90.057651
+
+Zulu
+Min x, Min y
+29.926203, -90.101388
+Max x, Max y
+29.985049, -90.049830
+
+Essence Fest
+Min x, Min y
+29.938485, -90.084125
+Max x, Max y
+29.952467, -90.063954
+
+Cork
+Min x, Min y
+29.960692, -90.066561
+Max x, Max y
+29.952748, -90.068086
+
+Oshun
+Min x, Min y
+29.916567, -90.116187
+Max x, Max y
+29.962681, -90.057651
+
+Jazz Fest:
+min x, min y:
+29.981105, -90.087322
+
+max x, max y
+29.986161, -90.076164
