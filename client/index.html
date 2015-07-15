@@ -151,10 +151,25 @@
               option.text = eventNames[i];
               event_name_field.add(option);
             }
+
+            showEvent(response["Mardi Gras Day"]['2015']);
             })
-            
           });//readJsonFile);
        
+
+       function showEvent(event) {
+       		console.log("event=",event);
+       		var where = "timearrival > '"+event.start+"'";
+       		console.log("where=",where);
+       		var params = {"$limit":"10","$where":where};
+       		$.get( "/emergency", params, function(data) {
+       			console.log("emergency data = ",data);
+       			showDataOnMap(data);
+			});
+			if(event.kmlurl) {
+				showKMLFile(event.kmlurl);
+			}
+       }
       </script>
 
     <script type="text/javascript"
