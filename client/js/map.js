@@ -45,10 +45,23 @@ function imageForMarker(dataElement) {
     else if (dataElement.typetext === 'FUGITIVE ATTTACHMENT'){
         return 'https://cdn3.iconfinder.com/data/icons/pidginsmilies/handcuffs.png';
     }
-    else if (dataElement.typetext === 'MUNICIPAL ATTTACHMEN'){
+    else if (dataElement.typetext === 'MUNICIPAL ATTTACHME'){
         return 'http://cdns2.freepik.com/free-photo/handcuffs-silhouette-detailed-icon-vector_91-8549.jpg';
     }
+    else if (dataElement.typetext === 'FIRE'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/3e515d3bdcc43c625a45c493acaf8eda44ac28e9/client/img/arson%20icon.png';
+    }
+     else if (dataElement.typetext === 'SIMPLE ARSON'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/3e515d3bdcc43c625a45c493acaf8eda44ac28e9/client/img/arson%20icon.png';
+    }
+     else if (dataElement.typetext === 'HIT & RUN'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/DUI%20icon.png';
+    }
+     else if (dataElement.typetext === 'RECKLESS DRIVING'){
+        return 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/client/img/DUI%20icon.png';
+    }
 }
+
 // HTML string that will show on marker click
 function contentForMarker(dataElement) {
     return '<div id="content">'+
