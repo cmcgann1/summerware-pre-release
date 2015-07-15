@@ -124,16 +124,22 @@ var kmlLayer;
  * Display KML file 
  */
 function showKMLFile(url) {
-	var urlPrefix = 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/kml/';
-	if(!url.startsWith('http')) {
-		url = urlPrefix + url;
-	}
 	if(kmlLayer) {
 		kmlLayer.setMap(null);
 	}
-	kmlLayer = new google.maps.KmlLayer({
-		url: url,
-		map: googleMap,
-		preserveViewport: true
-	});
+
+	if(url) {
+		var urlPrefix = 'https://raw.githubusercontent.com/joelcarranza/summerware-pre-release/master/kml/';
+		if(!url.startsWith('http')) {
+			url = urlPrefix + url;
+		}
+		kmlLayer = new google.maps.KmlLayer({
+			url: url,
+			map: googleMap,
+			preserveViewport: true
+		});
+	}
+	else {
+		kmlLayer = null;
+	}
 }
